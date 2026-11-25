@@ -1,0 +1,246 @@
+.dashboard-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+}
+
+.dashboard-heading h1 {
+    margin: 0;
+}
+
+.dashboard-heading .muted {
+    margin-bottom: 0;
+}
+
+.dashboard-stats {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+    margin-bottom: 22px;
+}
+
+.dashboard-stat {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 20px;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: var(--surface);
+    box-shadow: var(--shadow);
+}
+
+.dashboard-stat > span {
+    color: var(--muted);
+    font-size: .82rem;
+    font-weight: 600;
+}
+
+.dashboard-stat > strong {
+    overflow-wrap: anywhere;
+    color: var(--primary);
+    font-size: clamp(1.45rem, 2.4vw, 2rem);
+    line-height: 1.15;
+}
+
+.dashboard-stat > a {
+    color: var(--primary);
+    font-size: .78rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.dashboard-stat > a:hover,
+.quick-actions a:hover strong {
+    text-decoration: underline;
+}
+
+.dashboard-section-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 18px;
+}
+
+.dashboard-section-title h2 {
+    margin: 0;
+    color: var(--primary);
+    font-size: 1.25rem;
+}
+
+.dashboard-section-title .eyebrow {
+    margin-bottom: 3px;
+}
+
+.quick-actions-card {
+    margin-bottom: 22px;
+}
+
+.quick-actions {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.quick-actions a {
+    min-height: 130px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    padding: 16px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--surface-soft);
+    color: var(--text);
+    text-decoration: none;
+}
+
+.quick-actions a > span {
+    width: 30px;
+    height: 30px;
+    display: grid;
+    place-items: center;
+    border-radius: 9px;
+    background: #e4edd7;
+    color: var(--primary);
+    font-size: 1.15rem;
+    font-weight: 700;
+}
+
+.quick-actions strong {
+    color: var(--primary);
+    font-size: .9rem;
+}
+
+.quick-actions small {
+    color: var(--muted);
+    font-size: .74rem;
+    line-height: 1.4;
+}
+
+.dashboard-charts {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    margin-bottom: 22px;
+}
+
+.chart-card {
+    min-width: 0;
+    margin-bottom: 0;
+}
+
+.bar-chart {
+    display: grid;
+    gap: 16px;
+}
+
+.bar-row {
+    display: grid;
+    gap: 6px;
+}
+
+.bar-label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    font-size: .82rem;
+}
+
+.bar-label strong {
+    color: var(--primary);
+}
+
+.bar-track {
+    height: 10px;
+    overflow: hidden;
+    border-radius: 99px;
+    background: #edf1e9;
+}
+
+.bar-fill {
+    height: 100%;
+    display: block;
+    border-radius: inherit;
+    background: #87a85a;
+}
+
+.level-fill {
+    background: var(--primary);
+}
+
+.status-paid {
+    background: #73974b;
+}
+
+.status-approved {
+    background: #2d7844;
+}
+
+.status-expired {
+    background: #d6a54a;
+}
+
+.status-cancelled {
+    background: #bd4551;
+}
+
+.dashboard-status {
+    display: inline-flex;
+    padding: 4px 9px;
+    border-radius: 99px;
+    background: #edf1e9;
+    color: var(--primary);
+    font-size: .75rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.dashboard-status.status-approved,
+.dashboard-status.status-paid {
+    background: var(--success-bg);
+    color: var(--success);
+}
+
+.dashboard-status.status-cancelled,
+.dashboard-status.status-expired {
+    background: var(--danger-bg);
+    color: var(--danger);
+}
+
+@media (max-width: 850px) {
+    .dashboard-stats,
+    .quick-actions {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .dashboard-charts {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 520px) {
+    .dashboard-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .dashboard-heading .button {
+        width: 100%;
+    }
+
+    .dashboard-stats,
+    .quick-actions {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-section-title {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
